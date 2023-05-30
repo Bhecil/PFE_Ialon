@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d83e4582c700a574f89d7e468a5b7ab7, type: 2}
+  - {fileID: 2100000, guid: defbeb0cb34bf7847a38098ad68f35cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6365919685556398821}
   m_Layer: 0
-  m_Name: Tuile
+  m_Name: Tuile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

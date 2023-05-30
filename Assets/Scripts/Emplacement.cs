@@ -2,16 +2,20 @@ using UnityEngine;
 
 public class Emplacement : MonoBehaviour
 {
-    public Material selectMaterial;
-    public GameObject defaultTile;
+    //Game
+    private GameManager gameManager;
 
+    //Material
     private Renderer renderer;
+    public Material selectMaterial;
     private Material defaultMaterial;
 
+    //Specific
     public bool isEmpty;
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         renderer = GetComponent<Renderer>();
         defaultMaterial = renderer.material;
         isEmpty = true;
@@ -29,8 +33,7 @@ public class Emplacement : MonoBehaviour
     {
         if (isEmpty)
         {
-            Instantiate(defaultTile, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.rotation);
-            isEmpty = false;
+            isEmpty = !gameManager.main.PlaceTuileAt(this.transform);
         }
     }
 }
