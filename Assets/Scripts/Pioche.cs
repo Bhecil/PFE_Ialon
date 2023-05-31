@@ -3,7 +3,6 @@ using UnityEngine;
 public class Pioche : MonoBehaviour
 {
     private GameManager gameManager;
-
     private Main main;
 
     private void Start()
@@ -13,20 +12,11 @@ public class Pioche : MonoBehaviour
     }
     public void Piocher()
     {
-        for(int index = 0; index < main.heldTuiles.Length; index++)
-        {
-            //if (main.heldTuiles[index] == null)
-            //{
-                main.heldTuiles[index] = getNewTuile();
-            //}
-        }
+        main.Refill();
     }
 
-    private GameObject getNewTuile()
+    public int PickNewTuile()
     {
-        int reference = Random.Range(0, 2);
-        print(reference);
-
-        return gameManager.getTuile(reference);
+        return Random.Range(0, 3);
     }
 }

@@ -2,8 +2,18 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
+    private GameManager gameManager;
+
     public GameObject selectedTuile = null;
-    public GameObject[] heldTuiles = new GameObject[2];
+    private Pioche pioche;
+
+    public Doigt[] doigts = new Doigt[5];
+
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        pioche = gameManager.pioche;
+    }
 
     public bool PlaceTuileAt(Transform transform)
     {
@@ -18,6 +28,21 @@ public class Main : MonoBehaviour
 
     public void SelectTuile(int index)
     {
-        selectedTuile = heldTuiles[index];
+        if (doigts[index].hasTuile == true)
+        {
+            selectedTuile = gameManager.tuiles[doigts[index].GetTuileID()];
+        }
+    }
+
+    public void Refill()
+    {
+        foreach (var doigt in doigts)
+        {
+            if (doigt.hasTuile == false)
+            {
+                doigt.SetTuile(pioche.PickNewTuile());
+            }
+        }
     }
 }
+s
