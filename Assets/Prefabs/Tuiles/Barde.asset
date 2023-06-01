@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0d49262f80888409721272a85d49b7, type: 3}
+  m_Name: Barde
+  m_EditorClassIdentifier: 
+  <Valeur>k__BackingField: 0
+  <Image>k__BackingField: {fileID: 0}
+  <Prefab>k__BackingField: {fileID: 6365919685556398820, guid: 0cf41c27b8588224cad394a721ba5873,
+    type: 3}
