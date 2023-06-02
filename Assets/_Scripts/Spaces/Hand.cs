@@ -4,14 +4,17 @@ public class Hand : MonoBehaviour
 {
     private GameManager _gameManager;
 
-    [field:SerializeField]
-    public Doigt[] Doigts { get; private set; }
+    public Doigt[] Doigts { get; private set; } = new Doigt[5];
 
     private Doigt SelectedDoigt;
 
     private void Start()
     {
         _gameManager = FindAnyObjectByType<GameManager>();
+        for (int index = 0; index < 5; index++)
+        {
+            Doigts[index] = gameObject.transform.GetChild(index).gameObject.GetComponent<Doigt>();
+        }
     }
 
     public void Fill(Pioche pioche)

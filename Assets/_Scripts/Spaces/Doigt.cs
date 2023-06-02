@@ -8,7 +8,7 @@ public class Doigt : MonoBehaviour
     [field: SerializeField]
     public Tuile Tuile { get; private set; } = null;
 
-    public Hand _hand;
+    public Hand _hand { get; private set; }
 
     private Text _text;
     

@@ -190,7 +190,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Tuile>k__BackingField: {fileID: 11400000, guid: 6bc1e68e50ff24346b3bc54b13ef3308,
     type: 2}
-  _hand: {fileID: 0}
 --- !u!114 &17587046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4357,7 +4356,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Tuile>k__BackingField: {fileID: 11400000, guid: 631cb9fe50c04634586358f1d97243f9,
     type: 2}
-  _hand: {fileID: 0}
 --- !u!114 &828576477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4630,7 +4628,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Tuile>k__BackingField: {fileID: 11400000, guid: 631cb9fe50c04634586358f1d97243f9,
     type: 2}
-  _hand: {fileID: 0}
 --- !u!114 &834200681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6291,7 +6288,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Tuile>k__BackingField: {fileID: 11400000, guid: 6bc1e68e50ff24346b3bc54b13ef3308,
     type: 2}
-  _hand: {fileID: 0}
 --- !u!114 &1300365260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9053,12 +9049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9352ac28afe5f498c7da6ffaea34d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Doigts>k__BackingField:
-  - {fileID: 834200680}
-  - {fileID: 828576476}
-  - {fileID: 17587045}
-  - {fileID: 1300365259}
-  - {fileID: 1945446268}
 --- !u!1001 &1897964656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9275,7 +9265,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Tuile>k__BackingField: {fileID: 11400000, guid: 603de054b04719040ab2c2b99a026631,
     type: 2}
-  _hand: {fileID: 0}
 --- !u!114 &1945446269
 MonoBehaviour:
   m_ObjectHideFlags: 0

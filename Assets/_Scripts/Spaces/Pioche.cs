@@ -5,13 +5,13 @@ public class Pioche : MonoBehaviour
     private GameManager _gameManager;
 
     [SerializeField]
-    private Tuile[] Producteurs = new Tuile[1];
+    private Tuile[] Producteurs = new Tuile[0];
 
     [SerializeField]
-    private Tuile[] Nobles = new Tuile[1];
+    private Tuile[] Nobles = new Tuile[0];
 
     [SerializeField]
-    private Tuile[] Erudits = new Tuile[1];
+    private Tuile[] Erudits = new Tuile[0];
 
     private void Start()
     {
@@ -25,22 +25,23 @@ public class Pioche : MonoBehaviour
 
     public Tuile RandomTuile()
     {
-        int tuileClass = Random.Range(0,8) ;
+        int tuileClass = Random.Range(0,25) ;
 
         Tuile[] tuiles = new Tuile[0];
 
-        switch (tuileClass)
+        if (tuileClass < 2)
         {
-            case 0 :
-                tuiles = Erudits;
-                break;
-            case 1 :
-                tuiles = Nobles;
-                break;
-            case >1 :
-                tuiles = Producteurs;
-                break;
+            tuiles = Erudits;
         }
+        if (tuileClass >= 2 && tuileClass < 5)
+        {
+            tuiles = Nobles;
+        }
+        if (tuileClass >= 5)
+        {
+            tuiles = Producteurs;
+        }
+
         return tuiles[Random.Range(0, tuiles.Length)];
     }
 }

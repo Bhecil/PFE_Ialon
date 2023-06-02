@@ -24,8 +24,10 @@ public class Emplacement : MonoBehaviour
 
     private void OnMouseEnter()
     {
-
-        _renderer.material = _highlightMaterial;
+        if (IsEmpty)
+        {
+            _renderer.material = _highlightMaterial;
+        }
     }
 
     private void OnMouseExit()
@@ -43,9 +45,8 @@ public class Emplacement : MonoBehaviour
 
     public void SpawnTuile(Tuile tuile)
     {
-        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
+        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + 1.2f, transform.position.z);
         Instantiate (tuile.Prefab, spawnPosition, transform.rotation);
         IsEmpty = false;
-        //this.gameObject.SetActive(false);
     }
 }
