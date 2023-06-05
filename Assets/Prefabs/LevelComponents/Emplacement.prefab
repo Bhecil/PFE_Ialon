@@ -23,15 +23,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283890784733937893}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.75, y: 0.5, z: -1.192}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 232828081232521551}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &7012453046340615243
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6826661882319340191}
   - component: {fileID: 8144060842139604279}
   - component: {fileID: 5573286703227454632}
-  - component: {fileID: 1874245061706998555}
+  - component: {fileID: 4304373162041262111}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -131,7 +131,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5713234621226714601, guid: 70ec0c0097d9eac41977928af1921bda, type: 3}
---- !u!114 &1874245061706998555
+--- !u!114 &4304373162041262111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7875738d3b66068469af7e4ea659e84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <_isEmpty>k__BackingField: 1
-  _highlightMaterial: {fileID: 2100000, guid: c6269a49ade8ab6429bd1a5bcde982ca, type: 2}
+  <HighlightMaterial>k__BackingField: {fileID: 2100000, guid: c6269a49ade8ab6429bd1a5bcde982ca,
+    type: 2}
