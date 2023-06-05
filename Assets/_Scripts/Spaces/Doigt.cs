@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class Doigt : MonoBehaviour
 {
+    private GameManager _gameManager;
+
     public bool IsEmpty { get; private set; } = true;
 
     [field: SerializeField]
@@ -14,6 +16,7 @@ public class Doigt : MonoBehaviour
     
     private void Start()
     {
+        _gameManager = FindObjectOfType<GameManager>();
         _hand = FindObjectOfType<Hand>();
         _text = GetComponentInChildren<Text>();
         DropTuile();

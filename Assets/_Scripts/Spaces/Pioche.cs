@@ -33,11 +33,11 @@ public class Pioche : MonoBehaviour
         {
             tuiles = Erudits;
         }
-        if (tuileClass >= 2 && tuileClass < 5)
+        else if (tuileClass >= 2 && tuileClass < 5)
         {
             tuiles = Nobles;
         }
-        if (tuileClass >= 5)
+        else if (tuileClass >= 5)
         {
             tuiles = Producteurs;
         }
