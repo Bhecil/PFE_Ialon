@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         Hand = FindAnyObjectByType<Hand>();
         Pioche = FindAnyObjectByType<Pioche>();
-        ScoreManager = FindAnyObjectByType<ScoreManager>();
+        //ScoreManager = FindAnyObjectByType<ScoreManager>();
     }
 
     public void Piocher(Pioche pioche)

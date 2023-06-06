@@ -639,6 +639,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Producteurs:
   - {fileID: 3144424132366739885, guid: 4a99d0b2c9ec35240a9410d90db5f045, type: 3}
+  - {fileID: 3144424132366739885, guid: 454c569e979b5674fb27dd74902f084b, type: 3}
+  - {fileID: 3144424132366739885, guid: 6399f9f328d26e84ab114e10cfab5eaa, type: 3}
+  - {fileID: 3144424132366739885, guid: 45130e536be45384c94e913635ce0d51, type: 3}
+  - {fileID: 3144424132366739885, guid: 299d568511a243f4e825f8118e1b543b, type: 3}
+  - {fileID: 3144424132366739885, guid: 0252ffd43e11c8a47be43579272b89d0, type: 3}
   Nobles:
   - {fileID: 3144424132366739885, guid: 93bc79b5c0eeddd4bb5bbb3e88c98777, type: 3}
   Erudits:
@@ -5769,7 +5774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1218616380
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9659,6 +9664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79500236239c6244ab4e67e7a00cdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ListOfTuiles: []
 --- !u!4 &1967257100
 Transform:
   m_ObjectHideFlags: 0

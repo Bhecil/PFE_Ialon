@@ -25,23 +25,42 @@ public class Pioche : MonoBehaviour
 
     public Tuile RandomTuile()
     {
-        int tuileClass = Random.Range(0,25) ;
+        int indexTuile = Random.Range(0,100) ;
 
-        Tuile[] tuiles = new Tuile[0];
+        Tuile tuile = null;
 
-        if (tuileClass < 2)
+        if (indexTuile < 8)
         {
-            tuiles = Erudits;
+            tuile = Erudits[0];
         }
-        else if (tuileClass >= 2 && tuileClass < 5)
+        else if (indexTuile < 20)
         {
-            tuiles = Nobles;
+            tuile = Nobles[0];
         }
-        else if (tuileClass >= 5)
+        else if (indexTuile < 42)
         {
-            tuiles = Producteurs;
+        tuile = Producteurs[0];
         }
-
-        return tuiles[Random.Range(0, tuiles.Length)];
+        else if (indexTuile < 55)
+        {
+        tuile = Producteurs[1];
+        }
+        else if (indexTuile < 68)
+        {
+        tuile = Producteurs[2];
+        }
+        else if (indexTuile < 81)
+        {
+        tuile = Producteurs[3];
+        }
+        else if (indexTuile < 94)
+        {
+        tuile = Producteurs[4];
+        }
+        else if (indexTuile < 100)
+        {
+        tuile = Producteurs[5];
+        }   
+        return tuile;
     }
 }
