@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1053961828014672373}
   - component: {fileID: 3144424132366739885}
   m_Layer: 0
-  m_Name: DefaultTuile
+  m_Name: _DefaultTuile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

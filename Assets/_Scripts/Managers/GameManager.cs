@@ -17,12 +17,8 @@ public class GameManager : MonoBehaviour
     {
         Hand = FindAnyObjectByType<Hand>();
         Pioche = FindAnyObjectByType<Pioche>();
+        Hand.Piocher();
         //ScoreManager = FindAnyObjectByType<ScoreManager>();
-    }
-
-    public void Piocher(Pioche pioche)
-    {
-        Hand.Fill(pioche);
     }
 
     public void ChoisirUneTuile(Tuile tuile)
@@ -41,7 +37,7 @@ public class GameManager : MonoBehaviour
             SelectedTuile = null;
 
             //mettre à jour le score
-            ScoreManager.UpdateScore(ListOfTuiles);
+            //ScoreManager.UpdateScore(ListOfTuiles);
         }
     }
 }
