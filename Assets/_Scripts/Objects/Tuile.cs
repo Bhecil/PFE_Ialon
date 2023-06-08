@@ -4,11 +4,40 @@ public class Tuile : MonoBehaviour
 {
     [field: SerializeField] public string Class { get; private set; } = "Default Tuile Class";
 
+    [field: SerializeField] public int Niveau { get; private set; } = 1;
+
     [field: SerializeField] public int Valeur { get; private set; } = 0;
 
     [field: SerializeField] public int Score { get; private set; } = 0;
 
     [field: SerializeField] public Tuile[] _neighboors { get; private set; } = new Tuile[3];
+
+
+
+    private GameManager _gameManager;
+    private Renderer _renderer;
+    private Material _defaultMaterial;
+
+    private void Start()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
+        _renderer = GetComponent<Renderer>();
+        _defaultMaterial = _renderer.material;
+    }
+
+    private void OnMouseEnter()
+    {
+        _renderer.material = _gameManager._HoverMaterial;
+    }
+    private void OnMouseExit()
+    {
+        _renderer.material = _defaultMaterial;
+    }
+
+    private void OnMouseDown()
+    {
+        _gameManager.AmeliorerUneTuile(this);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -55,5 +84,10 @@ public class Tuile : MonoBehaviour
         }
 
         return count;
+    }
+
+    public void Upgrade()
+    {
+        Niveau++;
     }
 }

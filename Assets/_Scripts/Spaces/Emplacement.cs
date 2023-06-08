@@ -8,7 +8,6 @@ public class Emplacement : MonoBehaviour
 
     private Renderer _renderer;
 
-    [field:SerializeField] public Material HighlightMaterial { get; private set; }
     private Material _defaultMaterial;
 
     private void Start()
@@ -22,7 +21,7 @@ public class Emplacement : MonoBehaviour
     {
         if (IsEmpty)
         {
-            _renderer.material = HighlightMaterial;
+            _renderer.material = _gameManager._HoverMaterial;
         }
     }
 

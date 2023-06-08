@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,16 +8,16 @@ public class GameManager : MonoBehaviour
 
     public ScoreManager ScoreManager { get; private set; }
 
+    [field: SerializeField] public Material _HoverMaterial { get; private set; }
     public Tuile SelectedTuile { get; private set; }
 
-    [field:SerializeField] private List<Tuile> ListOfTuiles = new List<Tuile>();
+    private List<Tuile> ListOfTuiles = new List<Tuile>();
 
     private void Start()
     {
         Hand = FindAnyObjectByType<Hand>();
         Pioche = FindAnyObjectByType<Pioche>();
-        Hand.Piocher();
-        //ScoreManager = FindAnyObjectByType<ScoreManager>();
+        Hand.Fill();
     }
 
     public void ChoisirUneTuile(Tuile tuile)
@@ -32,12 +31,22 @@ public class GameManager : MonoBehaviour
         {
             //Poser la tuile
             emplacement.SpawnTuile(SelectedTuile);
-            ListOfTuiles.Add(SelectedTuile);
             Hand.ClearDoigt();
             SelectedTuile = null;
 
-            //mettre à jour le score
+            //Mettre à jour le score
+            //ListOfTuiles.Add(SelectedTuile);
             //ScoreManager.UpdateScore(ListOfTuiles);
+        }
+    }
+
+    public void AmeliorerUneTuile(Tuile tuile)
+    {
+        if (SelectedTuile != null && SelectedTuile.CompareTag(tuile.tag))
+        {
+            tuile.Upgrade();
+            SelectedTuile = null;
+            Hand.ClearDoigt();
         }
     }
 }

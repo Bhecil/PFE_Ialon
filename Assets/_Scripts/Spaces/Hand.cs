@@ -21,7 +21,7 @@ public class Hand : MonoBehaviour
         }
     }
 
-    public void Piocher()
+    public void Fill()
     {
        foreach (Doigt doigt in Doigts)
        {
@@ -36,6 +36,11 @@ public class Hand : MonoBehaviour
         _gameManager.ChoisirUneTuile(doigt.Tuile);
     }
 
+    public void DeselectDoigt()
+    {
+        SelectedDoigt = null;
+    }
+
     public void ClearDoigt()
     {
         SelectedDoigt.DropTuile();
@@ -44,7 +49,7 @@ public class Hand : MonoBehaviour
 
         if (NombreDeDoigtsVides == NombreDeDoigt)
         {
-            Piocher();
+            Fill();
         }
     }
 }
