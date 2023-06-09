@@ -8,7 +8,7 @@ public class Hand : MonoBehaviour
 
     [field: SerializeField] public int NombreDeDoigt { get; private set; } = 3;
 
-    private Doigt SelectedDoigt;
+    public Doigt SelectedDoigt;
 
     private int NombreDeDoigtsVides = 0;
 

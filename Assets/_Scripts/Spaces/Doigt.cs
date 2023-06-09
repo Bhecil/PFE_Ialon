@@ -24,7 +24,14 @@ public class Doigt : MonoBehaviour
 
     public void OnClick()
     {
-        _hand.SelectDoigt(this);
+        if (_gameManager.SelectedTuile == null)
+        {
+            _hand.SelectDoigt(this);
+        }
+        else
+        {
+            _gameManager.FusionnerDeuxTuiles(this);
+        }
     }
 
     public void DropTuile()
