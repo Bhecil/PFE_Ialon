@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         //generation de la table de fusion
         TableDeFusion.TryAdd("AgriculteurBucheron", NF2Tuiles[0]);  //Intendant
         TableDeFusion.TryAdd("AgriculteurHabitant", NF2Tuiles[1]);  //Meunier
-        TableDeFusion.TryAdd("BucheronHabitant", NF2Tuiles[2]);     //Meunisier
+        TableDeFusion.TryAdd("BucheronHabitant", NF2Tuiles[2]);     //Meunuisier
     }
 
     public void ChoisirUneTuile(Tuile tuile)

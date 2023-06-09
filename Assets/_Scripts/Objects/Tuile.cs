@@ -12,8 +12,7 @@ public class Tuile : MonoBehaviour
 
     [field: SerializeField] public Tuile[] _neighboors { get; private set; } = new Tuile[3];
 
-
-
+    private GameObject[] Niveaux = new GameObject[3];
     private GameManager _gameManager;
     private Renderer _renderer;
     private Material _defaultMaterial;
@@ -23,6 +22,16 @@ public class Tuile : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
         _renderer = GetComponent<Renderer>();
         _defaultMaterial = _renderer.material;
+
+        //get all lvl meshes
+        for (int index = 0; index < Niveaux.Length; index++)
+        {
+            if (gameObject.transform.childCount == 3)
+            {
+                Niveaux[index] = gameObject.transform.GetChild(index).gameObject;
+            }
+            
+        }
     }
 
     private void OnMouseEnter()
@@ -36,7 +45,10 @@ public class Tuile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        _gameManager.AmeliorerUneTuile(this);
+        if(Niveau < 3)
+        {
+            _gameManager.AmeliorerUneTuile(this);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -89,5 +101,6 @@ public class Tuile : MonoBehaviour
     public void Upgrade()
     {
         Niveau++;
+        Niveaux[Niveau-1].SetActive(true);
     }
 }

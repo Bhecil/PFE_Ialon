@@ -40,8 +40,9 @@ public class Emplacement : MonoBehaviour
 
     public void SpawnTuile(Tuile tuile)
     {
-        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + 1.2f, transform.position.z);
-        Instantiate (tuile, spawnPosition, transform.rotation);
+        Instantiate (tuile, transform.position, transform.rotation);
+        this.gameObject.SetActive(false);
         IsEmpty = false;
+
     }
 }

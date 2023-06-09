@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d83e4582c700a574f89d7e468a5b7ab7, type: 2}
+  - {fileID: 2100000, guid: fd59cdaa416b14747b016c8cddd1d4e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -159,7 +159,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d83e4582c700a574f89d7e468a5b7ab7, type: 2}
+  - {fileID: 2100000, guid: fd59cdaa416b14747b016c8cddd1d4e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -256,7 +256,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d83e4582c700a574f89d7e468a5b7ab7, type: 2}
+  - {fileID: 2100000, guid: fd59cdaa416b14747b016c8cddd1d4e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -306,8 +306,8 @@ GameObject:
   - component: {fileID: 1053961828014672373}
   - component: {fileID: 3144424132366739885}
   m_Layer: 0
-  m_Name: Bucheron
-  m_TagString: Bucheron
+  m_Name: Meunuisier
+  m_TagString: Meunuisier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
