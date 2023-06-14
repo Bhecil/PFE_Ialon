@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 546b6141bc639604eb371b8625efeaf2, type: 3}
-  m_Name: Habitant
+  m_Name: Bucheron
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Habitant
+  <Name>k__BackingField: Bucheron
   <Valeur>k__BackingField: 0
-  <DropRate>k__BackingField: 50
-  <TuilePrefab>k__BackingField: {fileID: 0}
+  <DropRate>k__BackingField: 25
+  <Prefab>k__BackingField: {fileID: 7911677378287669504, guid: f76187dd9b455e44f95fdfa44391f6f6, type: 3}

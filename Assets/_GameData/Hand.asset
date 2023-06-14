@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96697a9c5726b2f478de89e6c298c5ce, type: 3}
+  m_Name: Hand
+  m_EditorClassIdentifier: 
+  <NombreDeDoigt>k__BackingField: 3
+  <Largeur>k__BackingField: 50
+  <ListeDeDoigts>k__BackingField: []
+  <DoigtPrefab>k__BackingField: {fileID: 2692400810858120099, guid: b01223450f630da45948460ef2716658, type: 3}

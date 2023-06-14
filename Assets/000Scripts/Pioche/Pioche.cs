@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Pioche : MonoBehaviour
 {
-    [field: SerializeField] public Tuile[] listOfTuiles { get; private set; } = new Tuile[0];
+    //La liste des tuiles piochables
+    public Tuile[] listOfTuiles = new Tuile[0];
 
     public Tuile RandomTuile()
     {

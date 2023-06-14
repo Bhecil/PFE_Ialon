@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8397864732257243236}
   - component: {fileID: 7139639949745642679}
   - component: {fileID: -8815932077333211626}
-  - component: {fileID: 6882225998419610855}
+  - component: {fileID: -4686144058564100356}
   m_Layer: 0
   m_Name: _DoigtDefault
   m_TagString: Untagged
@@ -110,7 +110,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5713234621226714601, guid: 409d9e628732a314c8b4226b22a6dead, type: 3}
---- !u!114 &6882225998419610855
+--- !u!114 &-4686144058564100356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d0ec182cea4754a88cecc33f1898fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <GameData>k__BackingField: {fileID: 11400000, guid: a7d936ec1a60c3146af9dac26c2a9c64, type: 2}
 --- !u!1 &6861685523654189666
 GameObject:
   m_ObjectHideFlags: 0

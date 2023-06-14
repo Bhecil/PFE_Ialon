@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class EmplacementVoisin : MonoBehaviour
+public class EmplacementVoisins : MonoBehaviour
 {
-    public Emplacement Emplacement;
+    //Les données de cet emplacement
+    public EmplacementData Emplacement;
 
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.TryGetComponent(out EmplacementVoisin emplacementVoisin);
+        other.gameObject.TryGetComponent(out EmplacementVoisins emplacementVoisin);
         if(emplacementVoisin != null)
         {
             Emplacement.Voisins.Add(emplacementVoisin.Emplacement);

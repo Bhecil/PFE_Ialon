@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546b6141bc639604eb371b8625efeaf2, type: 3}
-  m_Name: Agriculteur
+  m_Script: {fileID: 11500000, guid: 979546a89e2075b4081f10bc057e4ae6, type: 3}
+  m_Name: GameData
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Agriculteur
-  <Valeur>k__BackingField: 0
-  <DropRate>k__BackingField: 25
-  <TuilePrefab>k__BackingField: {fileID: 0}
