@@ -7,8 +7,7 @@ public class EmplacementVoisins : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.TryGetComponent(out EmplacementVoisins emplacementVoisin);
-        if(emplacementVoisin != null)
+        if(other.gameObject.TryGetComponent(out EmplacementVoisins emplacementVoisin))
         {
             Emplacement.Voisins.Add(emplacementVoisin.Emplacement);
         }

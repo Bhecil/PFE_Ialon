@@ -3,22 +3,38 @@ using UnityEngine;
 public class EmplacementInterraction : MonoBehaviour
 {
     //Les données globales de la partie
-    public GameData GameData;
+    public HandData HandData;
     //Les données de cet emplacement
     public EmplacementData Emplacement;
 
     private void OnMouseDown()
     {
-        if (GameData.SelectedTuile != null)
+        Debug.Log(HandData.SelectedTuile.name);
+        if (HandData.SelectedTuile != null)
         {
+            HandData.SelectedTuile.TryGetComponent(out Tuile tuile);
             if (Emplacement.Tuile == null)
             {
-                Instantiate(GameData.SelectedTuile.TuilePrefab, transform.position + new Vector3(0, 0.2f, 0), transform.rotation);
+                PlaceTuile(tuile);
+                HandData.SelectedTuile = null;
             }
-            else if (Emplacement.Tuile.Type == GameData.SelectedTuile.Type)
+            else if (Emplacement.Tuile.Nom == tuile.TuileData.Nom)
             {
-                Debug.Log("Upgrade");
+                UpgradeTuile();
+                HandData.SelectedTuile = null;
             }
         }
+    }
+
+    private void PlaceTuile(Tuile tuile)
+    {
+        Emplacement.Tuile = tuile.TuileData;
+        tuile.transform.position = transform.position + new Vector3(0, 1, 0);
+        tuile.transform.rotation = transform.rotation;
+    }
+
+    private void UpgradeTuile()
+    {
+        Debug.Log("Upgrade");
     }
 }

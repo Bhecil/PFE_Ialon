@@ -2,19 +2,28 @@ using UnityEngine;
 
 public class Doigt : MonoBehaviour
 {
-    //le GameManager
-    [field:SerializeField] public GameData GameData { get; private set; }
+    //La main
+    public HandData HandData {get; set; }
     //La tuile dans ce doigt
-    public Tuile Tuile { get; private set; }
+    public TuileData TuileData { get; private set; }
+    //Le gameObject de la tuile du doigt
+    public GameObject Tuile { get; private set; }
 
     private void OnMouseDown()
     {
-        GameData.SelectedTuile = Tuile;
+        if (TuileData != null)
+        {
+            HandData.SelectedTuile = Tuile;
+        }
     }
 
-    public void ObtainTuile(Tuile tuile)
+    public void ObtainTuile(TuileData newTuile)
     {
-        Tuile = tuile;
-        Instantiate(Tuile.TuilePrefab, transform.position + new Vector3(0, 0.2f, 0), transform.rotation);
+        TuileData = newTuile;
+        Tuile = Instantiate(TuileData.TuilePrefab, transform.position + new Vector3(0, 0.2f, 0), transform.rotation);
+        if (Tuile.TryGetComponent(out Tuile tuile))
+        {
+            tuile.TuileData = TuileData;
+        }
     }
 }

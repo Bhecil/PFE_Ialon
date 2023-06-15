@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 126167563747049423}
   - component: {fileID: 6547998015015675647}
   - component: {fileID: 8156967140303843892}
-  - component: {fileID: 1137967162941001052}
+  - component: {fileID: -7721349435382611750}
   m_Layer: 0
   m_Name: _EmplacementDefault
   m_TagString: Untagged
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Emplacement: {fileID: 0}
---- !u!114 &1137967162941001052
+--- !u!114 &-7721349435382611750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b8504108ee5d747b159dca407fdee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  <Emplacement>k__BackingField: {fileID: 0}
+  HandData: {fileID: 11400000, guid: f6ecb23afd280cd4ca0b69c865b4b9e1, type: 2}
+  Emplacement: {fileID: 0}
 --- !u!1 &6861685523654189666
 GameObject:
   m_ObjectHideFlags: 0

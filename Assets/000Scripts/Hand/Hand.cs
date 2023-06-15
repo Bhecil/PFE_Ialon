@@ -1,25 +1,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Hand", menuName = "DataTable / Hand")]
-public class Hand : ScriptableObject
+public class Hand : MonoBehaviour
 {
-    //Le nombre maximal de tuiles que la main peut contenir
-    [field:SerializeField] public int NombreDeDoigt { get; private set; } = 3;
-    //L'écart entre les deux doigts les plus opposés
-    [field:SerializeField] public int Largeur { get; private set; } = 50;
-    //Le prefab d'un doigt
-    [field: SerializeField] public GameObject DoigtPrefab { get; private set; }
-    //La liste des doigts de la main
-    [field: SerializeField] public List<GameObject> ListeDeDoigts { get; set; } = new List<GameObject>();
+    //Les données de la main
+    [field:SerializeField] public HandData HandData { get; private set; }
+    //la pioche
+    [field:SerializeField] public Pioche Pioche { get; private set; }
 
-    /*private void Refill()
+    void Start()
     {
-        TuileData tuile;
-        foreach (GameObject doigt in ListDeDoigts)
+        SpawnDoigts();
+        Refill();
+    }
+
+    private void SpawnDoigts()
+    {
+        float step = HandData.Largeur / HandData.NombreDeDoigts;
+        Vector3 position = new Vector3(6, 0, - step * (HandData.NombreDeDoigts - 1) / 2);
+
+        HandData.ListOfDoigts = new List<GameObject>(0);
+
+        for (int index = 0; index < HandData.NombreDeDoigts; ++index)
         {
-            tuile = Pioche.RandomTuile();
-            doigt.ObtainTuile(tuile);
+            HandData.ListOfDoigts.Add(Instantiate(HandData.DoigtPrefab, position, Quaternion.identity));
+            HandData.ListOfDoigts[index].GetComponent<Doigt>().HandData = HandData;
+            position.z += step;
         }
-    }*/
+    }
+
+    private void Refill()
+    {
+        foreach (GameObject doigtPrefab in HandData.ListOfDoigts)
+        {
+            if (doigtPrefab.TryGetComponent(out Doigt doigt))
+            {
+                doigt.ObtainTuile(Pioche.RandomTuile());
+            }
+        }
+    }
 }

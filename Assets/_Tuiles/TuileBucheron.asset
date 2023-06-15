@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c907c0ef83805489623d30d67a39eb, type: 3}
-  m_Name: Plaine
+  m_Script: {fileID: 11500000, guid: d2a28e8e7d96d6a4a8cf79fbbcb4204b, type: 3}
+  m_Name: TuileBucheron
   m_EditorClassIdentifier: 
-  Voisins:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  EmplacementPrefab: {fileID: 0}
+  Nom: Bucheron
+  Valeur: 0
+  DropRate: 25
+  TuilePrefab: {fileID: 7911677378287669504, guid: f76187dd9b455e44f95fdfa44391f6f6, type: 3}

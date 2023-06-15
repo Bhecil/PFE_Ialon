@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 979546a89e2075b4081f10bc057e4ae6, type: 3}
-  m_Name: GameData
+  m_Script: {fileID: 11500000, guid: 20fff9390e0a0154ba3e21e97af6fb20, type: 3}
+  m_Name: EmplacementPlaine
   m_EditorClassIdentifier: 
+  <Type>k__BackingField: Plaine
+  <Prefab>k__BackingField: {fileID: 8783502284615472773, guid: 53e73438590843e488970529b7d5d0ac, type: 3}

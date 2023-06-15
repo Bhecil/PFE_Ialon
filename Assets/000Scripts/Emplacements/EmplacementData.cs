@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Emplacement")]
+[CreateAssetMenu(fileName = "Emplacement", menuName = "Emplacement")]
 public class EmplacementData : ScriptableObject
 {
     //Le type d'emplacement
-    public string type = "DefaultEmplacementType";
+    [field:SerializeField] public string Type { get; private set; } = "DefaultEmplacementType";
     //le prefab de l'emplacement
-    public GameObject Prefab;
+    [field:SerializeField] public GameObject Prefab { get; private set; }
     //les emplacements voisins de l'emplacement
-    public List<EmplacementData> Voisins = new List<EmplacementData>();
+    public List<EmplacementData> Voisins { get; set; } = new List<EmplacementData>();
     //la tuile à cet emplacement
-    public Tuile Tuile = null;
+    public TuileData Tuile { get; set; } = null;
 
 }
