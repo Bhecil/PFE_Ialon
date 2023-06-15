@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2398637680954675842, guid: 3c605e5820958e340959d025fc23bc9b, type: 3}
+      propertyPath: <Nom>k__BackingField
+      value: Agriculteur
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398637680954675842, guid: 3c605e5820958e340959d025fc23bc9b, type: 3}
+      propertyPath: <Chance>k__BackingField
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4770300386165372076, guid: 3c605e5820958e340959d025fc23bc9b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
