@@ -1,16 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tuile : MonoBehaviour
 {
-    [field: SerializeField] public string Class { get; private set; } = "Default Tuile Class";
+    [field: SerializeField] public string Nom { get; private set; } = "Default Tuile Name";
 
     [field: SerializeField] public int Niveau { get; private set; } = 1;
 
     [field: SerializeField] public int Valeur { get; private set; } = 0;
 
-    [field: SerializeField] public int Score { get; private set; } = 0;
+    [field: SerializeField] public Sprite Image { get; private set; }
+    [field: SerializeField] public Sprite HoverImage { get; private set; }
 
-    [field: SerializeField] public Tuile[] _neighboors { get; private set; } = new Tuile[3];
+    public int Score { get; private set; } = 0;
+
+    public Tuile[] _neighboors { get; private set; } = new Tuile[3];
 
     private GameObject[] Niveaux = new GameObject[3];
     private GameManager _gameManager;
@@ -66,17 +70,17 @@ public class Tuile : MonoBehaviour
 
     public int CalculateScore()
     {
-        if (Class == "Producteur")
+        if (Nom == "Producteur")
         {
             Debug.Log("producteur");
             Score = Valeur;
         }
-        else if (Class == "Noble")
+        else if (Nom == "Noble")
         {
             Debug.Log("noble");
             Score = Valeur * GetNeighboorsCount();
         }
-        else if (Class == "Erudit")
+        else if (Nom == "Erudit")
         {
             Debug.Log("erudit");
         }

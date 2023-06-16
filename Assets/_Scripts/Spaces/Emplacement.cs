@@ -41,7 +41,9 @@ public class Emplacement : MonoBehaviour
     public void SpawnTuile(Tuile tuile)
     {
         Instantiate (tuile, transform.position, transform.rotation);
-        this.gameObject.SetActive(false);
+        Destroy(gameObject);
+        
+        
         IsEmpty = false;
 
     }

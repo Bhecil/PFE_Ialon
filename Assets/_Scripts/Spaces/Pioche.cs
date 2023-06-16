@@ -4,8 +4,7 @@ public class Pioche : MonoBehaviour
 {
     private GameManager _gameManager;
 
-    [SerializeField]
-    private Tuile[] Tuiles = new Tuile[3];
+    [SerializeField] private Tuile[] Tuiles = new Tuile[3];
 
     private void Start()
     {

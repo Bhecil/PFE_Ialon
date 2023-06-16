@@ -7,18 +7,18 @@ public class Doigt : MonoBehaviour
 
     public bool IsEmpty { get; private set; } = true;
 
-    [field: SerializeField]
     public Tuile Tuile { get; private set; } = null;
 
     public Hand _hand { get; private set; }
 
     private Text _text;
+    private Image _image;
     
     private void Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
         _hand = FindObjectOfType<Hand>();
-        _text = GetComponentInChildren<Text>();
+        _image = GetComponent<Button>().image;
         DropTuile();
     }
 
@@ -27,6 +27,7 @@ public class Doigt : MonoBehaviour
         if (_gameManager.SelectedTuile == null)
         {
             _hand.SelectDoigt(this);
+            _image.sprite = Tuile.HoverImage;
         }
         else
         {
@@ -46,6 +47,6 @@ public class Doigt : MonoBehaviour
         IsEmpty = false;
         Tuile = tuile;
         gameObject.SetActive(true);
-        _text.text = Tuile.name;
+        _image.sprite = Tuile.Image;
     }
 }
