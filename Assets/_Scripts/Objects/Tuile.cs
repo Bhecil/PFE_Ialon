@@ -70,19 +70,23 @@ public class Tuile : MonoBehaviour
 
     public int CalculateScore()
     {
-        if (Nom == "Producteur")
+        if (Nom == "Habitant")
         {
-            Debug.Log("producteur");
-            Score = Valeur;
+            if (_gameManager.ScoreManager.Bonheur >= 0)
+            {
+                Score = 1;
+            }
+            else
+            {
+                Score = 0;
+            }
         }
-        else if (Nom == "Noble")
+        else if (Nom == "Bucheron")
         {
-            Debug.Log("noble");
-            Score = Valeur * GetNeighboorsCount();
+
         }
-        else if (Nom == "Erudit")
+        else if (Nom == "Agriculteur")
         {
-            Debug.Log("erudit");
         }
         return Score;
     }

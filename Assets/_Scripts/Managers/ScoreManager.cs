@@ -4,22 +4,31 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    [field: SerializeField] public int Score { get; private set; } = 0;
+    public int Score { get; private set; } = 0;
+    public int Bonheur { get; private set; } = 0;
+    
     private Text _scoreText;
 
     private void Start()
     {
         _scoreText = GetComponentInChildren<Text>();
+        _scoreText.text = Score.ToString();
     }
 
-    public void UpdateScore(List<Tuile> listOfTuiles)
+    public void UpdateScore(List<Emplacement> listOfEmplacements)
     {
-        int score = 0;
+        //calcul du bonheur
+        foreach (Emplacement emplacement in listOfEmplacements)
+        {
+            emplacement.CalculateScore();
+        }
+        /*
+        //calcul du score
+        Score = 0;
         foreach (Tuile tuile in listOfTuiles)
         {
-            score += tuile.CalculateScore();
+            Score += tuile.CalculateScore();
         }
-        Score = score;
-        _scoreText.text = Score.ToString();
+        _scoreText.text = Score.ToString();*/
     }
 }

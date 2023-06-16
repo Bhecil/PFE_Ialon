@@ -15,10 +15,14 @@ public class GameManager : MonoBehaviour
 
     private Dictionary<string, Tuile> TableDeFusion= new Dictionary<string, Tuile>();
 
+    //liste des emplacements occupés
+    public List<Emplacement> ListOfEmplacements { get; set; } = new List<Emplacement>();
+
     private void Start()
     {
         Hand = FindAnyObjectByType<Hand>();
         Pioche = FindAnyObjectByType<Pioche>();
+        ScoreManager = FindAnyObjectByType<ScoreManager>();
         Hand.Fill();
 
         //generation de la table de fusion
@@ -39,10 +43,11 @@ public class GameManager : MonoBehaviour
             //Poser la tuile
             emplacement.SpawnTuile(SelectedTuile);
             Hand.ClearDoigt();
+            ListOfEmplacements.Add(emplacement);
             SelectedTuile = null;
 
             //Mettre à jour le score
-            //ScoreManager.UpdateScore(ListOfTuiles);
+            ScoreManager.UpdateScore(ListOfEmplacements);
         }
     }
 

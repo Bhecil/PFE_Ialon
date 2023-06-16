@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Emplacement : MonoBehaviour
@@ -9,6 +10,17 @@ public class Emplacement : MonoBehaviour
     private Renderer _renderer;
 
     private Material _defaultMaterial;
+
+    //la liste des vosins de cet emplacement
+    public List<Emplacement> ListeOfVoisins;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (TryGetComponent(out Emplacement voisin))
+        {
+            ListeOfVoisins.Add(voisin);
+        }
+    }
 
     private void Start()
     {
@@ -46,5 +58,12 @@ public class Emplacement : MonoBehaviour
         
         IsEmpty = false;
 
+    }
+
+    public int CalculateScore()
+    {
+        int Score = 0;
+
+        return Score;
     }
 }
