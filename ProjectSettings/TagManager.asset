@@ -4,12 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Habitant
-  - Bucheron
-  - Agriculteur
   - Meunuisier
-  - Intendant
-  - Meunier
   layers:
   - Default
   - TransparentFX

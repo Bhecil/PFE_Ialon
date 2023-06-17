@@ -2,34 +2,37 @@ using UnityEngine;
 
 public class Pioche : MonoBehaviour
 {
-    private GameManager _gameManager;
-
+    //la liste des tuiles piochables
     [SerializeField] private Tuile[] Tuiles = new Tuile[3];
+
+    //la somme des probabilités de chaque tuile de la pioche
+    [SerializeField] private int Somme = 0;
 
     private void Start()
     {
-        _gameManager = FindAnyObjectByType<GameManager>();
+        //calcul de la somme des probabilités
+        foreach (var tuile in Tuiles)
+        { 
+            Somme += tuile.Chance;
+        }
     }
 
     public Tuile RandomTuile()
     {
-        int indexTuile = Random.Range(0,100) ;
+        int random = Random.Range(0, Somme);
+        int cumulatedChance = 0;
+        Tuile randomTuile = null;
 
-        Tuile tuile = null;
+        foreach (var tuile in Tuiles)
+        {
+            cumulatedChance += tuile.Chance;
+            if (random < cumulatedChance)
+            {
+                randomTuile = tuile;
+                break;
+            }
+        }
 
-        if (indexTuile < 50)
-        {
-            tuile = Tuiles[0];
-        }
-        else if (indexTuile < 75)
-        {
-            tuile = Tuiles[1];
-        }
-        else if (indexTuile < 100)
-        {
-            tuile = Tuiles[2];
-        }
-        
-        return tuile;
+        return randomTuile;
     }
 }

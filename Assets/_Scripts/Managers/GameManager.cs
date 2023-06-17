@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
             Hand.ClearDoigt();
             ListOfEmplacements.Add(emplacement);
             SelectedTuile = null;
-
             //Mettre à jour le score
             ScoreManager.UpdateScore(ListOfEmplacements);
         }
@@ -53,11 +52,14 @@ public class GameManager : MonoBehaviour
 
     public void AmeliorerUneTuile(Tuile tuile)
     {
-        if (SelectedTuile != null && SelectedTuile.CompareTag(tuile.tag))
+        if (SelectedTuile != null && SelectedTuile.Nom == tuile.Nom)
         {
+            //Améliorer la tuile
             tuile.Upgrade();
             SelectedTuile = null;
             Hand.ClearDoigt();
+            //Mettre à jour le score
+            ScoreManager.UpdateScore(ListOfEmplacements);
         }
     }
 

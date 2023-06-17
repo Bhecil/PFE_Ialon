@@ -72,5 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmplacementPlaine
       objectReference: {fileID: 0}
+    - target: {fileID: 6730255992296879201, guid: fe1722ad78969bc46b0f5f254f944dfc,
+        type: 3}
+      propertyPath: <Type>k__BackingField
+      value: Plaine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe1722ad78969bc46b0f5f254f944dfc, type: 3}

@@ -3,20 +3,23 @@ using UnityEngine;
 
 public class Emplacement : MonoBehaviour
 {
-    private GameManager _gameManager;
-
-    public bool IsEmpty { get; private set; } = true;
-
-    private Renderer _renderer;
-
-    private Material _defaultMaterial;
+    [field: SerializeField] public string Type { get; private set; } = "Default Emplacement Name";
 
     //la liste des vosins de cet emplacement
-    public List<Emplacement> ListeOfVoisins;
+    public List<Emplacement> ListeOfVoisins { get; private set; } = new List<Emplacement>();
+    //la tuile à cet emplacement
+    public Tuile Tuile { get; private set; } = null;
+
+    //le renderer de cet emplacement
+    private Renderer _renderer;
+    //le material par défaut de cet emplacement
+    private Material _defaultMaterial;
+    //le GameManager
+    private GameManager _gameManager;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (TryGetComponent(out Emplacement voisin))
+        if (other.gameObject.TryGetComponent(out Emplacement voisin))
         {
             ListeOfVoisins.Add(voisin);
         }
@@ -31,10 +34,7 @@ public class Emplacement : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (IsEmpty)
-        {
-            _renderer.material = _gameManager._HoverMaterial;
-        }
+        _renderer.material = _gameManager._HoverMaterial;
     }
 
     private void OnMouseExit()
@@ -44,7 +44,7 @@ public class Emplacement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (IsEmpty)
+        if (Tuile == null)
         {
             _gameManager.PoserUneTuile(this);
         }
@@ -53,16 +53,49 @@ public class Emplacement : MonoBehaviour
     public void SpawnTuile(Tuile tuile)
     {
         Instantiate (tuile, transform.position, transform.rotation);
-        Destroy(gameObject);
-        
-        
-        IsEmpty = false;
-
+        Tuile = tuile;
+        Tuile.Niveau = 1;
+        if (Type == "Foret")
+        {
+            Type = "Plaine";
+            gameObject.SetActive(false);
+            //gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            //_defaultMaterial = Tuile.GetComponent<Renderer>().sharedMaterial;
+        }
     }
 
     public int CalculateScore()
     {
         int Score = 0;
+
+        switch (Tuile.Nom)
+        {
+            case "Agriculteur":
+                Score = 0 + Tuile.Niveau - 1;
+                break;
+            case "Bucheron":
+                var nombreDeForetsVoisines = 0;
+                foreach (Emplacement voisin in ListeOfVoisins)
+                {
+                    if (voisin.Type == "Foret")
+                    {
+                        nombreDeForetsVoisines++;
+                    }
+                }
+                Score = nombreDeForetsVoisines * 3 + Tuile.Niveau - 1;
+                break;
+            case "Habitant":
+                if (_gameManager.ScoreManager.Bonheur >= 0)
+                {
+                    Score = 3 + Tuile.Niveau - 1;
+                }
+                else
+                {
+                    Score = 1 + Tuile.Niveau - 1;
+                }
+                break;
+
+        }
 
         return Score;
     }
