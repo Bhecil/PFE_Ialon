@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void AmeliorerUneTuile(Tuile tuile)
     {
-        if (SelectedTuile != null && SelectedTuile.CompareTag(tuile.tag))
+        if (SelectedTuile != null && SelectedTuile.Nom == tuile.Nom)
         {
             tuile.Upgrade();
             SelectedTuile = null;
@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour
     public void FusionnerDeuxTuiles(Doigt doigt)
     {
         //calcule de la clé
-        string name1 = SelectedTuile.tag;
-        string name2 = doigt.Tuile.tag;
+        string name1 = SelectedTuile.Nom;
+        string name2 = doigt.Tuile.Nom;
         string key = "";
 
         if (name1.CompareTo(name2) > 0)

@@ -11,15 +11,4 @@ public class ScoreManager : MonoBehaviour
     {
         _scoreText = GetComponentInChildren<Text>();
     }
-
-    public void UpdateScore(List<Tuile> listOfTuiles)
-    {
-        int score = 0;
-        foreach (Tuile tuile in listOfTuiles)
-        {
-            score += tuile.CalculateScore();
-        }
-        Score = score;
-        _scoreText.text = Score.ToString();
-    }
 }
